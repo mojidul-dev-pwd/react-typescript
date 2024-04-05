@@ -1,10 +1,11 @@
 import axios from 'axios';
 import { FC, useEffect, useState } from 'react';
+import { AppProps, Users } from './components/App.types';
 import User from './components/User';
 
-interface AppProps {
-  title: string;
-}
+// interface AppProps {
+//   title: string;
+// }
 //or using type
 // type AppProps = {
 //   title: string;
@@ -19,20 +20,20 @@ interface AppProps {
 //   return <div>App</div>;
 // };
 
-export interface Name {
-  first: string;
-  last: string;
-}
+// export interface Name {
+//   first: string;
+//   last: string;
+// }
 
-export interface Login {
-  uuid: string;
-}
+// export interface Login {
+//   uuid: string;
+// }
 
-export interface Users {
-  name: Name;
-  login: Login;
-  email: string;
-}
+// export interface Users {
+//   name: Name;
+//   login: Login;
+//   email: string;
+// }
 
 const App: FC<AppProps> = ({ title }) => {
 
