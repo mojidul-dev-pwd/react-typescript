@@ -41,6 +41,8 @@ const App: FC<AppProps> = ({ title }) => {
 
   const [users, setUsers] = useState<Users[]>([]);
 
+  const [username, setUsername] = useState('');
+
   // useEffect(() => {
     
   //   const getUsers = async () => {
@@ -73,12 +75,19 @@ const App: FC<AppProps> = ({ title }) => {
     }
   };
 
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setUsername(event.target.value);
+  };
+
   
   return (
     <div>
       <h1>{title}</h1>
       {isLoading && <p>Loading...</p>}
       <button onClick={handleClick}>Show Users</button>
+      &nbsp;
+      <input type='text' onChange={handleChange} />
+      <div>{username}</div>
       <ul>
         {/* {users.map(({ login, name, email }) => {
           return (
